@@ -1,14 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>TestFoundapps</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+<!doctype html>
+<html lang="en" ng-app="application">
+  <head>
+    <base href="/">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation Angular</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body ng-app="app">
+    <zf-notification-set id="main-notifications"></zf-notification-set>
+    <div class="grid-frame vertical">
+      <div class="grid-content shrink" style="padding: 0;">
+        <ul class="primary condense menu-bar">
+          <li><a><strong>Foundation for Apps</strong></a></li>
+          <li><a href="#">Home</a></li>
+          <li><a ui-sref="about">About</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="grid-content">
+        <div class="grid-container">
+          <div ng-class="['ui-animation']" ui-view><%= yield %></div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
