@@ -99,5 +99,5 @@ gulp.task('default', ['build'], function() {
   gulp.watch(['!./app/views/templates/**/*.*'], ['copy', 'copy-templates']);
 
   // Watch app templates
-  //gulp.watch(['./app/views/templates/**/*.html'], ['copy-templates']);
+  gulp.watch(['./app/views/templates/**/*.html'], ['copy-templates']);
 });
