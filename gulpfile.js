@@ -47,6 +47,14 @@ gulp.task('clean', function(cb) {
   rimraf('./vendor/assets/javascripts/build', cb);
 });
 
+gulp.task('clean-partials', function(cb) {
+  rimraf('./public/partials', cb);
+});
+
+gulp.task('clean-templates', function(cb) {
+  rimraf('./public/templates', cb);
+});
+
 // Copies user-created files and Foundation assets
 gulp.task('copy', function() {
 
@@ -87,7 +95,7 @@ gulp.task('copy-templates', ['copy'], function() {
 
 // Builds your entire app once, without starting a server
 gulp.task('build', function() {
-  runSequence('clean', ['copy', 'uglify'], 'copy-templates', function() {
+  runSequence('clean', 'clean-partials', 'clean-templates', ['copy', 'uglify'], 'copy-templates', function() {
     console.log("Successfully built.");
   })
 });
@@ -96,8 +104,8 @@ gulp.task('build', function() {
 gulp.task('default', ['build'], function() {
 
   // Watch static files
-  gulp.watch(['!./app/views/templates/**/*.*'], ['copy', 'copy-templates']);
+  //gulp.watch(['!./app/views/templates/**/*.*'], ['copy', 'copy-templates']);
 
   // Watch app templates
-  gulp.watch(['./app/views/templates/**/*.html'], ['copy-templates']);
+  gulp.watch(['app/views/templates/**/*.html'], ['copy-templates']);
 });
