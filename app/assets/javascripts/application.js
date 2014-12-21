@@ -9,6 +9,6 @@
 //
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
-//= require build/foundation
-//= require build/routes
+//= require jquery
+//= require jquery_ujs
 //= require_tree .

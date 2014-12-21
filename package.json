@@ -26,6 +26,7 @@
     "karma-phantomjs-launcher": "",
     "karma-chrome-launcher": "",
     "karma-firefox-launcher": "",
-    "karma-ie-launcher": ""
+    "karma-ie-launcher": "",
+    "karma-ng-html2js-preprocessor": "~0.1"
   }
 }

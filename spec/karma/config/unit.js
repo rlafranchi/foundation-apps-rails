@@ -14,10 +14,17 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'http://localhost:3000/assets/application.css',
+      'http://code.jquery.com/jquery-2.1.3.min.js',
+      'vendor/assets/javascripts/build/foundation.js',
+      'vendor/assets/javascripts/build/routes.js',
       'vendor/assets/bower_components/angular/angular.js',
       'vendor/assets/bower_components/angular-mocks/angular-mocks.js',
       'app/assets/javascripts/angular/**/*.{coffee,js}',
-      'spec/javascripts/angular/**/*_spec.{coffee,js}'
+      'spec/javascripts/angular/**/*_spec.{coffee,js}',
+      'app/views/layouts/application.html.erb',
+      'public/templates/**/*.html',
+      'public/partials/**/*.html'
     ],
 
     // list of files to exclude
@@ -69,7 +76,10 @@ module.exports = function(config) {
 
     // Preprocessors
     preprocessors: {
-        '/**/*.coffee':'coffee'
+        '/**/*.coffee.erb': ['coffee'],
+        '/**/*.coffee': ['coffee'],
+        '/**/*.html': ['html2js'],
+        '/**/*.html.erb': ['html2js']
     }
 
   });
