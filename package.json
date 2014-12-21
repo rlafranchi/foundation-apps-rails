@@ -1,8 +1,6 @@
 {
   "name": "angular-rails-example",
   "private": true,
-  "dependencies": {
-  },
   "devDependencies": {
     "gulp": "^3.8.10",
     "gulp-autoprefixer": "^1.0.1",
