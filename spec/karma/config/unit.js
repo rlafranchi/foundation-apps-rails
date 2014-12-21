@@ -5,18 +5,19 @@ module.exports = function(config) {
   config.set({
 
     // base path, based on tmp/ folder
-    basePath: '..',
+    basePath: '../../..',
 
 
     // frameworks to use
-    frameworks: ['jasmine', 'ng-scenario'],
+    frameworks: ['jasmine'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      APPLICATION_SPEC,
-      'app/assets/javascripts/angular/*/*.{coffee,js}',
-      'spec/javascripts/**/*_spec.{coffee,js}'
+      'vendor/assets/bower_components/angular/angular.js',
+      'vendor/assets/bower_components/angular-mocks/angular-mocks.js',
+      'app/assets/javascripts/angular/**/*.{coffee,js}',
+      'spec/javascripts/angular/**/*_spec.{coffee,js}'
     ],
 
     // list of files to exclude
@@ -55,7 +56,7 @@ module.exports = function(config) {
     // - Safari (only Mac; has to be installed with `npm install karma-safari-launcher`)
     // - PhantomJS
     // - IE (only Windows; has to be installed with `npm install karma-ie-launcher`)
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
 
 
     // If browser does not capture in given timeout [ms], kill it
