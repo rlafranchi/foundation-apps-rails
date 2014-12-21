@@ -14,18 +14,6 @@ group :development do
   gem 'gulp_rails'
 end
 
-gem 'rails-assets-foundation-apps'
-gem 'rails-assets-fastclick'
-gem 'rails-assets-viewport-units-buggyfill'
-gem 'rails-assets-tether'
-gem 'rails-assets-angular', '~> 1.3.0'
-gem 'rails-assets-angular-animate', '~> 1.3.0'
-gem 'rails-assets-ui-router'
-
-group :development, :test do
-  gem 'rails-assets-angular-mocks', '~> 1.3.0'
-end
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

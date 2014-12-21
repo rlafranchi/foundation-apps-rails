@@ -1,0 +1,6 @@
+{
+  "name": "foundation-apps-rails",
+    "dependencies": {
+    "foundation-apps": "zurb/foundation-apps"
+  }
+}
