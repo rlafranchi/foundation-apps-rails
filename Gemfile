@@ -17,6 +17,8 @@ end
 group :development, :test do
   gem 'fabrication'
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'pry'
 end
 
 # Use ActiveModel has_secure_password
