@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'base#index'
 
-  scope :api, {format: :json} do
+  scope :api, defaults: {format: :json} do
     resources :posts
   end
 
