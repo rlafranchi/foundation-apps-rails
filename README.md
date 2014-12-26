@@ -71,3 +71,63 @@ describe('ExampleController', function(){
   });
 });
 ```
+
+<h3>Integrating with Rails</h3>
+
+* checkout the posts branch to see an example of how to fetch data from the rails backend
+`git checkout posts`
+* Here's an example of how to expose json data at
+
+```ruby
+# posts_controller.rb
+
+class PostsController < ApplicationController
+  respond_to :json
+  def index
+    respond_with Post.all
+  end
+  
+  # ...
+  
+end
+```
+* api routes are under the api scope
+
+```ruby
+scope :api, defaults: {format: :json} do
+  resources :posts, except: [:new, :edit]
+end
+
+#     posts GET    /api/posts(.:format)          posts#index {:format=>:json}
+#           POST   /api/posts(.:format)          posts#create {:format=>:json}
+#      post GET    /api/posts/:id(.:format)      posts#show {:format=>:json}
+#           PATCH  /api/posts/:id(.:format)      posts#update {:format=>:json}
+#           PUT    /api/posts/:id(.:format)      posts#update {:format=>:json}
+#           DELETE /api/posts/:id(.:format)      posts#destroy {:format=>:json}
+```
+
+* an angular REST api service has been created to easily implement requests in a similar manner to rails development and allows for the following methods: `getIndex()` `getShow(id)` `postCreate(params)` `putUpdate(params)` `deleteDestroy(params)`
+
+```javascript
+// app/assets/controllers/posts_controller.js
+controllers.controller('Postscontroller', ['$scope', 'restApi', function($scope, restApi) {
+  $scope.api = new restApi('posts');
+  
+  $scope.api.getIndex().then(function() {
+    $scope.posts = $scope.api.data; // returns all posts
+  });
+}]);
+```
+
+```html
+<!-- app/view/templates/posts.html -->
+---
+name: posts
+url: /posts
+controller: PostsController
+---
+<div ng-repeat="post in posts">
+  <h1>{{post.title}}</h1>
+  <p>{{post.content}}</p>
+</div>
+```

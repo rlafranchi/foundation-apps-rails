@@ -1,9 +1,3 @@
-//app.service('Posts', function(restApi) {
-//    var posts = new restApi('posts');
-//    posts.getIndex();
-//    return posts.data;
-//});
-
 app.controller('PostsController', ['$rootScope', '$scope', 'restApi', '$state', 'FoundationApi', '$filter', function($rootScope, $scope, restApi, $state, foundationApi, $filter) {
   $scope.api = new restApi('posts');
   $scope.params = $state.params;
