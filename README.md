@@ -76,7 +76,6 @@ describe('ExampleController', function(){
 
 * checkout the posts branch to see an example of how to fetch data from the rails backend
 `git checkout posts`
-<<<<<<< HEAD
 * Here's an example of how to expose json data
 
 ```ruby
