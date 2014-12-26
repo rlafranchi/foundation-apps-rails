@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "2.1.3"
+
 gem 'rails', '4.1.6'
 gem 'sqlite3'
 gem 'sass', '~> 3.4.0'
@@ -18,6 +20,11 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'pry'
+end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
 end
 
 # Use ActiveModel has_secure_password
