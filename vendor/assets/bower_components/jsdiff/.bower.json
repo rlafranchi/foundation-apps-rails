@@ -1,0 +1,14 @@
+{
+  "name": "jsdiff",
+  "homepage": "https://github.com/kpdecker/jsdiff",
+  "version": "1.0.8",
+  "_release": "1.0.8",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.8",
+    "commit": "86aeea2b55a5e47a76ed24c98fab65d6dac4102c"
+  },
+  "_source": "git://github.com/kpdecker/jsdiff.git",
+  "_target": "~1.0.8",
+  "_originalSource": "jsdiff"
+}

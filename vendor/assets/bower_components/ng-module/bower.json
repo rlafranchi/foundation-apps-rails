@@ -1,0 +1,24 @@
+{
+  "name": "ng-module",
+  "main": "ng-module.js",
+  "version": "0.0.3",
+  "homepage": "https://github.com/seiyria/ng-module",
+  "authors": [
+  	"Luis Perez",
+    "Kyle Kemp <kyle@seiyria.com>"
+  ],
+  "description": "Have more than one ng-app per page with ng-module.",
+  "keywords": [
+    "angular",
+    "ngapp",
+    "module"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
