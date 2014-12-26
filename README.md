@@ -76,7 +76,8 @@ describe('ExampleController', function(){
 
 * checkout the posts branch to see an example of how to fetch data from the rails backend
 `git checkout posts`
-* Here's an example of how to expose json data at
+<<<<<<< HEAD
+* Here's an example of how to expose json data
 
 ```ruby
 # posts_controller.rb
@@ -120,8 +121,8 @@ controllers.controller('Postscontroller', ['$scope', 'restApi', function($scope,
 ```
 
 ```html
-<!-- app/view/templates/posts.html -->
----
+<!-- app/views/templates/posts.html -->
+
 name: posts
 url: /posts
 controller: PostsController
