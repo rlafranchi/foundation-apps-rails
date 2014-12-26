@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 ruby "2.1.3"
 
 gem 'rails', '4.1.6'
-gem 'sqlite3'
 gem 'sass', '~> 3.4.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -16,6 +15,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'fabrication'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
