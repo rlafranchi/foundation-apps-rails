@@ -74,6 +74,8 @@ describe('ExampleController', function(){
 
 <h3>Integrating with Rails</h3>
 
+* here's a working demo: https://young-fortress-5170.herokuapp.com/posts
+
 * checkout the posts branch to see an example of how to fetch data from the rails backend
 `git checkout posts`
 * Here's an example of how to expose json data
