@@ -1,6 +1,7 @@
 {
   "name": "foundation-apps-rails",
-    "dependencies": {
-    "foundation-apps": "zurb/foundation-apps"
+  "dependencies": {
+    "foundation-apps": "zurb/foundation-apps",
+    "angular-inflector": "~0.2.0"
   }
 }

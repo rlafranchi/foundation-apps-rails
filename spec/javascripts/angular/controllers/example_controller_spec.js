@@ -2,7 +2,7 @@ describe('ExampleController', function(){
   var $scope;
 
 
-  beforeEach(module('application'));
+  beforeEach(module('application.controllers'));
 
   beforeEach(inject(function($rootScope, $controller) {
     $scope = $rootScope.$new();

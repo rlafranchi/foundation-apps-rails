@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="application">
+<html lang="en" ng-app="app">
   <head>
     <base href="/">
     <meta charset="utf-8" />
@@ -9,13 +9,13 @@
     <%= javascript_include_tag 'build/routes', 'build/foundation', 'application' %>
     <%= csrf_meta_tags %>
   </head>
-  <body ng-app="application.services">
+  <body>
     <zf-notification-set id="main-notifications"></zf-notification-set>
     <div class="grid-frame vertical">
       <div class="grid-content shrink" style="padding: 0;">
         <ul class="primary condense menu-bar">
-          <li><a><strong>Foundation for Apps</strong></a></li>
-          <li><a ui-sref="/">Home</a></li>
+          <li><a ui-sref="posts"><strong>Foundation for Apps</strong></a></li>
+          <li><a ui-sref="posts">All Posts</a></li>
         </ul>
       </div>
       <div class="grid-content">

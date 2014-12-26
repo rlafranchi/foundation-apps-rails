@@ -5,12 +5,10 @@ describe('restApi', function () {
   beforeEach(module('application.services'));
 
   beforeEach(inject(function($injector) {
-     // Set up the mock http service responses
     $httpBackend = $injector.get('$httpBackend');
     restApi = $injector.get('restApi');
     resources = 'resources';
     apiNew = new restApi(resources);
-
   }));
 
   afterEach(function() {
@@ -128,19 +126,31 @@ describe('restApi', function () {
     });
   });
 
-//    describe('getUser', function () {
-//        it('should call getUser with username', inject(function (Api) {
-//            $httpBackend.expectGET('/api/' + )
-//                .respond([{
-//                username: 'test'
-//            }]);
-//
-//            var result = mockUserResource.getUser('test');
-//
-//            $httpBackend.flush();
-//
-//            expect(result[0].username).toEqual('test');
-//        }));
-//
-//    });
+  describe('resourcesPath', function() {
+    it('should return the right path', function() {
+      var apiPlus = new restApi('posts');
+      expect(apiPlus.postsPath).toEqual('/posts');
+    });
+  });
+
+  describe('newresourcePath', function() {
+    it('should return the right path', function() {
+      var apiPlus = new restApi('posts');
+      expect(apiPlus.newpostPath).toEqual('/posts/new');
+    });
+  });
+
+  describe('resourcePath', function() {
+    it('should return the right path', function() {
+      var apiPlus = new restApi('posts');
+      expect(apiPlus.postPath(1)).toEqual('/posts/1');
+    });
+  });
+
+  describe('editresourcePath', function() {
+    it('should return the right path', function() {
+      var apiPlus = new restApi('posts');
+      expect(apiPlus.editpostPath(1)).toEqual('/posts/1/edit');
+    });
+  });
 });

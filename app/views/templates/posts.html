@@ -1,0 +1,72 @@
+---
+name: posts
+url: /posts
+controller: PostsController
+---
+
+<h1>Posts <small><a href="#" ng-click="new()">New</a></small></h1>
+<hr>
+
+<div ng-repeat="post in filteredPosts">
+  <h1>{{ post.title }} <small><a href="#" ng-click="edit(post.id)">Edit</a><span ng-show="params.id == undefined"> | <a ui-sref="posts.show({id: post.id})">Show</a></span> | <a href="#" ng-click="destroy(post)">Delete</a></small></h1>
+  <hr>
+  <p>{{ post.content }}</p>
+</div>
+
+<zf-modal size="small" id="edit-posts" overlay="false" overlay-close="true">
+  <div class="grid-block vertical">
+    <div class="primary title-bar">
+      <div class="center title">Edit Post</div>
+      <span zf-close class="left"><a href="#">Close</a></span>
+    </div>
+    <div class="grid-content padding" style="padding-top: 1rem; padding-bottom: 1rem;">
+      <form novalidate>
+        <fieldset>
+        <legend>Edit Post</legend>
+          <label>Title</label>
+          <input type="text" name="title" ng-model="post.title" required/>
+          <label>Content</label>
+          <textarea name="content" ng-model="post.content"></textarea>
+          <button class="button radius" type="submit" ng-click="update()">Post</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</zf-modal>
+
+
+<zf-modal size="small" id="new-posts" overlay="false" overlay-close="true">
+  <div class="grid-block vertical">
+    <div class="primary title-bar">
+      <div class="center title">New Post</div>
+      <span zf-close class="left"><a href="#">Close</a></span>
+    </div>
+    <div class="grid-content padding" style="padding-top: 1rem; padding-bottom: 1rem;">
+      <form novalidate>
+        <fieldset>
+        <legend>New Post</legend>
+          <label>Title</label>
+          <input type="text" name="title" ng-model="post.title" required/>
+          <label>Content</label>
+          <textarea name="content" ng-model="post.content"></textarea>
+          <button class="button radius" type="submit" ng-click="create()">Post</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</zf-modal>
+
+
+<zf-modal size="small" id="delete-posts" overlay="true">
+  <div class="grid-block vertical">
+    <div class="primary title-bar">
+      <div class="center title">Delete Post</div>
+      <span zf-close class="left"><a href="#">Close</a></span>
+    </div>
+    <div class="grid-content padding" style="padding-top: 1rem; padding-bottom: 1rem;">
+      <p>Are you sure?</p>
+      <a zf-close class="button" ng-click="destroyConfirm(post)">Yes</a>
+      <a zf-close class="button" href="#">No</a>
+    </div>
+  </div>
+</zf-modal>

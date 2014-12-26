@@ -1,3 +1,3 @@
-app.controller('ExampleController', ['$scope', function($scope) {
+controllers.controller('ExampleController', ['$scope', function($scope) {
   $scope.hola = 'Hola';
 }]);
