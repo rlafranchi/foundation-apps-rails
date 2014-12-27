@@ -61,7 +61,7 @@ gulp.task('copy', function() {
 
   // Iconic SVG icons
   gulp.src('./vendor/assets/bower_components/foundation-apps/iconic/**/*')
-    .pipe(gulp.dest('./app/assets/images/iconic/'));
+    .pipe(gulp.dest('./public/images/iconic/'));
 
   // Foundation's Angular partials
   return gulp.src(['./vendor/assets/bower_components/foundation-apps/js/angular/partials/**.*'])
@@ -85,7 +85,7 @@ gulp.task('uglify', function() {
 
 // Copies your app's page templates and generates URLs for them
 gulp.task('copy-templates', ['copy'], function() {
-  return gulp.src('./app/views/templates/**/*.html')
+  return gulp.src('./app/views/templates/**/*.{html,erb}')
     .pipe(dynamicRouting({
       path: 'vendor/assets/javascripts/build/routes.js',
       root: 'app/views'
@@ -108,5 +108,5 @@ gulp.task('default', ['build'], function() {
   //gulp.watch(['!./app/views/templates/**/*.*'], ['copy', 'copy-templates']);
 
   // Watch app templates
-  gulp.watch(['app/views/templates/**/*.html'], ['copy-templates']);
+  gulp.watch(['app/views/templates/**/*.{html,erb}'], ['copy-templates']);
 });
