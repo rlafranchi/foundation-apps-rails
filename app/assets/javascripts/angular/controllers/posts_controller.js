@@ -44,7 +44,7 @@ app.controller('PostsController', ['$rootScope', '$scope', 'restApi', '$state', 
         handleErrors($scope.data.errors);
       } else {
         filterPosts();
-        foundationApi.publish('main-notifications', {title: "Post Updated", color: "success", position: "top left"});
+        foundationApi.publish('main-notifications', {title: "Post Updated", color: "success", position: "bottom left"});
         foundationApi.publish('edit-posts', 'close');
       }
     });
@@ -65,7 +65,7 @@ app.controller('PostsController', ['$rootScope', '$scope', 'restApi', '$state', 
         $scope.posts.push($scope.post);
         filterPosts();
         $state.go('posts');
-        foundationApi.publish('main-notifications', {title: "Post Created", color: "success", position: "top left"});
+        foundationApi.publish('main-notifications', {title: "Post Created", color: "success", position: "bottom left"});
         foundationApi.publish('new-posts', 'close');
       }
     });
@@ -86,7 +86,7 @@ app.controller('PostsController', ['$rootScope', '$scope', 'restApi', '$state', 
         $scope.posts.splice(index, 1);
         filterPosts();
         $state.go('posts');
-        foundationApi.publish('main-notifications', {title: "Post Deleted", color: "warning", position: "top left"});
+        foundationApi.publish('main-notifications', {title: "Post Deleted", color: "warning", position: "bottom left"});
       }
     });
   }
@@ -101,7 +101,7 @@ app.controller('PostsController', ['$rootScope', '$scope', 'restApi', '$state', 
         content += key.toUpperCase()[0] + key.slice(1) + ' ' + errors[key][error];
       }
     }
-    foundationApi.publish('main-notifications', {title: "Error", content: content, color: "alert", position: "top left"});
+    foundationApi.publish('main-notifications', {title: "Error", content: content, color: "alert", position: "bottom left"});
   }
 
 }]);

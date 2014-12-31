@@ -4,20 +4,32 @@ url: /posts
 controller: PostsController
 ---
 
-<div class="grid-content">
-  <div class="grid-block medium-6">
+<a ui-sref="posts" ng-hide="params.id == undefined">&laquo; Back</a>
+<div class="grid-block" ng-show="params.id == undefined">
+  <div class="grid-content small-up-6">
     <h1>Posts <small><a href="#" ng-click="new()">New</a></small></h1>
   </div>
-  <div class="grid-block medium-6">
+  <div class="grid-content small-up-6">
     <input type=text ng-model="searchText" placeholder="...Search"/>
   </div>
 </div>
+<h1 ng-hide="params.id == undefined">{{post.title}}</h1>
 <hr>
+<p ng-hide="params.id == undefined">{{post.content}}</p>
 
-<div ng-repeat="post in filteredPosts | filter:searchText">
-  <h1>{{ post.title }} <small><a href="#" ng-click="edit(post.id)">Edit</a><span ng-show="params.id == undefined"> | <a ui-sref="posts.show({id: post.id})">Show</a></span> | <a href="#" ng-click="destroy(post)">Delete</a></small></h1>
-  <hr>
-  <p>{{ post.content }}</p>
+<div class="grid-block small-up-2 medium-up-4" ng-show="params.id==undefined">
+  <div class="grid-content" ng-repeat="post in filteredPosts | filter:searchText">
+    <div class="card">
+      <div class="card-divider">
+        <a href="#" ng-click="edit(post.id)">Edit</a><span ng-show="params.id == undefined"> | <a ui-sref="posts.show({id: post.id})">Show</a></span> | <a href="#" ng-click="destroy(post)">Delete</a>
+      </div>
+      <div class="card-section">
+        <h4>{{ post.title }}</h4>
+        <hr>
+        <p>{{ post.content }}</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <zf-modal size="small" id="edit-posts" overlay="false" overlay-close="true">
@@ -28,14 +40,11 @@ controller: PostsController
     </div>
     <div class="grid-content padding" style="padding-top: 1rem; padding-bottom: 1rem;">
       <form novalidate>
-        <fieldset>
-        <legend>Edit Post</legend>
-          <label>Title</label>
-          <input type="text" name="title" ng-model="post.title" required/>
-          <label>Content</label>
-          <textarea name="content" ng-model="post.content"></textarea>
-          <button class="button radius" type="submit" ng-click="update()">Post</button>
-        </fieldset>
+        <label>Title</label>
+        <input type="text" name="title" ng-model="post.title" required/>
+        <label>Content</label>
+        <textarea name="content" ng-model="post.content"></textarea>
+        <button class="button radius" type="submit" ng-click="update()">Post</button>
       </form>
     </div>
   </div>
@@ -50,14 +59,11 @@ controller: PostsController
     </div>
     <div class="grid-content padding" style="padding-top: 1rem; padding-bottom: 1rem;">
       <form novalidate>
-        <fieldset>
-        <legend>New Post</legend>
-          <label>Title</label>
-          <input type="text" name="title" ng-model="post.title" required/>
-          <label>Content</label>
-          <textarea name="content" ng-model="post.content"></textarea>
-          <button class="button radius" type="submit" ng-click="create()">Post</button>
-        </fieldset>
+        <label>Title</label>
+        <input type="text" name="title" ng-model="post.title" required/>
+        <label>Content</label>
+        <textarea name="content" ng-model="post.content"></textarea>
+        <button class="button radius" type="submit" ng-click="create()">Post</button>
       </form>
     </div>
   </div>
