@@ -16,7 +16,7 @@ controller: PostsController
 <h1 ng-hide="params.id == undefined">{{post.title}}</h1>
 <strong ng-hide="params.id == undefined">Published: {{ post.created_at | date: 'MM.dd.yyyy h:mma Z' }}<span ng-hide="post.updated_at == post.created_at"> | Updated: {{ post.updated_at | date: 'MM.dd.yyyy h:mma Z' }}</span></strong>
 <hr>
-<p ng-hide="params.id == undefined">{{post.content}}</p>
+<p ng-hide="params.id == undefined" ng-bind-html="deliberatelyTrustDangerousSnippet(post.content)"></p>
 
 <div class="grid-block small-up-2 medium-up-4" ng-show="params.id==undefined">
   <div class="grid-content" ng-repeat="post in filteredPosts | filter:searchText">
@@ -28,7 +28,7 @@ controller: PostsController
         <h4>{{ post.title }}</h4>
         <strong>{{ post.created_at | date: 'MM.dd.yyyy' }}</strong>
         <hr>
-        <p>{{ post.content }}</p>
+        <p ng-bind-html="deliberatelyTrustDangerousSnippet(post.content)"></p>
       </div>
     </div>
   </div>

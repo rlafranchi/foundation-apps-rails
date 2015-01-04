@@ -1,6 +1,6 @@
 var application = angular.module('application');
 var services = angular.module('application.services', ['platanus.inflector']);
-var controllers = angular.module('application.controllers', ['application', 'application.services', 'platanus.inflector']);
+var controllers = angular.module('application.controllers', ['application', 'application.services', 'platanus.inflector', 'ngSanitize']);
 var app = angular.module('app', ['application', 'application.services', 'application.controllers']);
 
 app.config([ '$httpProvider', '$locationProvider', function($httpProvider, $locationProvider) {

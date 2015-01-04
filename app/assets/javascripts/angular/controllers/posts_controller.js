@@ -1,4 +1,4 @@
-app.controller('PostsController', ['$rootScope', '$scope', 'restApi', '$state', 'FoundationApi', '$filter', function($rootScope, $scope, restApi, $state, foundationApi, $filter) {
+app.controller('PostsController', ['$rootScope', '$scope', 'restApi', '$state', 'FoundationApi', '$filter', '$sce', function($rootScope, $scope, restApi, $state, foundationApi, $filter, $sce) {
   $scope.api = new restApi('posts');
   $scope.params = $state.params;
 
@@ -90,6 +90,10 @@ app.controller('PostsController', ['$rootScope', '$scope', 'restApi', '$state', 
       }
     });
   }
+
+  $scope.deliberatelyTrustDangerousSnippet = function(content) {
+   return $sce.trustAsHtml(content);
+  };
 
   var handleErrors = function(errors) {
     var content = '';
