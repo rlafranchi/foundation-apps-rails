@@ -13,7 +13,7 @@ controller: PostsController
     <input type=text ng-model="searchText" placeholder="...Search"/>
   </div>
 </div>
-<h1 ng-hide="params.id == undefined">{{post.title}}</h1>
+<h1 ng-hide="params.id == undefined">{{post.title}} <small><a href="#" ng-click="edit(post.id)">Edit</a></small></h1>
 <strong ng-hide="params.id == undefined">Published: {{ post.created_at | date: 'MM.dd.yyyy h:mma Z' }}<span ng-hide="post.updated_at == post.created_at"> | Updated: {{ post.updated_at | date: 'MM.dd.yyyy h:mma Z' }}</span></strong>
 <hr>
 <p ng-hide="params.id == undefined" ng-bind-html="deliberatelyTrustDangerousSnippet(post.content)"></p>
@@ -28,7 +28,7 @@ controller: PostsController
         <h4>{{ post.title }}</h4>
         <strong>{{ post.created_at | date: 'MM.dd.yyyy' }}</strong>
         <hr>
-        <p ng-bind-html="deliberatelyTrustDangerousSnippet(post.content)"></p>
+        <p>{{ post.content | limitTo:55 }}</p>
       </div>
     </div>
   </div>
