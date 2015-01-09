@@ -11,7 +11,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 group :development do
   gem 'spring'
-  gem 'gulp_rails'
+  # gem 'gulp_rails'
 end
 
 # Use ActiveModel has_secure_password
