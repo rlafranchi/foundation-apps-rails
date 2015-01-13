@@ -55,7 +55,7 @@ gulp.task('copy', function() {
 
   // Iconic SVG icons
   gulp.src('./vendor/assets/bower_components/foundation-apps/iconic/**/*')
-    .pipe(gulp.dest('./app/assets/images/iconic/'));
+    .pipe(gulp.dest('./public/images/iconic/'));
 
   // Foundation's Angular partials
   return gulp.src(['./vendor/assets/bower_components/foundation-apps/js/angular/components/**/*.html'])
