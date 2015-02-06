@@ -13,12 +13,17 @@ http://foundation.zurb.com/apps
 
 * run the following commands to install bower components and node packages
 
-<tt>bundle install</tt>
-<tt>rake zfapp:install</tt>
+`bundle install`
+<br/>
+`rake zfapp:install`
 
 * run Gulp from the root directory to build the necessary javascript files, partials, templates, and iconic images.  This will also watch for template changes.
 
 <tt>gulp</tt>
+
+<h3>Updating Foundation for Apps</h3>
+
+* simply run `bower update` from the root directory
 
 <h3>Templates</h3>
 

@@ -16,3 +16,7 @@
 /tmp
 node_modules
 npm-debug.log
+bower_components
+/vendor/assets/bower_components
+npm-debug.log
+.DS_Store

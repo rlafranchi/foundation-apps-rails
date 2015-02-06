@@ -44,13 +44,8 @@ var foundationJS = [
 // 3. TASKS
 // - - - - - - - - - - - - - - -
 
-// Cleans the build directory
-gulp.task('clean', function(cb) {
-  rimraf('./vendor/assets/javascripts/build', cb);
-});
-
 gulp.task('clean-partials', function(cb) {
-  rimraf('./public/partials', cb);
+  rimraf('./public/components', cb);
 });
 
 gulp.task('clean-templates', function(cb) {
@@ -65,8 +60,8 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('./public/images/iconic/'));
 
   // Foundation's Angular partials
-  return gulp.src(['./vendor/assets/bower_components/foundation-apps/js/angular/partials/**.*'])
-    .pipe(gulp.dest('./public/partials/'));
+  return gulp.src(['./vendor/assets/bower_components/foundation-apps/js/angular/components/**/*.html'])
+    .pipe(gulp.dest('./public/components/'));
 });
 
 // Compiles and copies the Foundation for Apps JavaScript, as well as your app's custom JS
@@ -97,7 +92,7 @@ gulp.task('copy-templates', ['copy'], function() {
 
 // Builds your entire app once, without starting a server
 gulp.task('build', function() {
-  runSequence('clean', 'clean-partials', 'clean-templates', ['copy', 'uglify'], 'copy-templates', function() {
+  runSequence('clean-partials', 'clean-templates', ['copy', 'uglify'], 'copy-templates', function() {
     console.log("Successfully built.");
   })
 });
