@@ -14,7 +14,7 @@
     .run(run)
   ;
 
-  config.$inject = ['$urlRouterProvider', '$locationProvider'];
+  config.$inject = ['$urlRouterProvider', '$locationProvider', '$httpProvider'];
 
   function config($urlProvider, $locationProvider, $httpProvider) {
     $urlProvider.otherwise('/');
@@ -32,5 +32,6 @@
     FastClick.attach(document.body);
   }
 
-  var app = angular.module('application');
 })();
+
+var app = angular.module('application');
