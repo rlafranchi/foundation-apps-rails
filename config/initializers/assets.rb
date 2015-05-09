@@ -8,3 +8,4 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile += %w( build/foundation.js )
 Rails.application.config.assets.precompile += %w( build/routes.js )
+Rails.application.config.assets.precompile += %w( build/templates.js )
