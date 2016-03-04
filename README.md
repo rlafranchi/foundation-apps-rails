@@ -18,6 +18,8 @@ http://foundation.zurb.com/apps
 `rake zfapp:install`
 
 * run Gulp from the root directory to build the necessary javascript files, partials, templates, and iconic images.  This will also watch for template changes.
+* Note: Gulp will automatically run while a development Rails server is running. This was set up in
+  config/initializers/gulp.rb
 
 <tt>gulp</tt>
 
