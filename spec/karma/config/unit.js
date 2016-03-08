@@ -20,8 +20,8 @@ module.exports = function(config) {
       'vendor/assets/javascripts/build/routes.js',
       'vendor/assets/bower_components/angular/angular.js',
       'vendor/assets/bower_components/angular-mocks/angular-mocks.js',
-      'app/assets/javascripts/angular/**/*.{coffee,js}',
-      'spec/javascripts/angular/**/*_spec.{coffee,js}',
+      'app/assets/javascripts/angular/**/*.+(coffee|js)',
+      'spec/javascripts/angular/**/*_spec.+(coffee|js)',
       'app/views/layouts/application.html.erb',
       'public/templates/**/*.html',
       'public/partials/**/*.html'
