@@ -72,7 +72,7 @@ gulp.task('copy:foundation', function(cb) {
 
   // Iconic SVG icons
   gulp.src('./vendor/assets/bower_components/foundation-apps/iconic/**/*')
-    .pipe(gulp.dest('./public/images/iconic/'))
+    .pipe(gulp.dest('./public/assets/img/iconic/'))
   ;
 
   cb();
